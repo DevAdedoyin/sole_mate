@@ -9,7 +9,6 @@ import 'dashboard_tabs/explore_tab.dart';
 import 'dashboard_tabs/favorite.dart';
 import 'dashboard_tabs/home_tab.dart';
 
-
 class DashboardScreen extends ConsumerStatefulWidget {
   const DashboardScreen({super.key});
 
@@ -41,32 +40,28 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
         unselectedIconTheme: IconThemeData(color: AppColors.greyColor),
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        selectedItemColor:  AppColors.tertiaryColor,
+        selectedItemColor: AppColors.tertiaryColor,
         unselectedItemColor: AppColors.greyColor,
         elevation: 0,
-        selectedLabelStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        selectedLabelStyle:
+            const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         unselectedLabelStyle: TextStyle(color: AppColors.greyColor),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.houseUser),
+            icon: Icon(FontAwesomeIcons.houseChimneyWindow),
             label: "Home",
-
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.searchengin),
-            label: "Catalog",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.cartShopping),
-            label: "Cart",
+            icon: Icon(FontAwesomeIcons.shoePrints),
+            label: "Explore",
           ),
           BottomNavigationBarItem(
             icon: Icon(FontAwesomeIcons.heart),
-            label: "Favorites",
+            label: "Favorite",
           ),
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.user),
-            label: "Profile",
+            icon: Icon(FontAwesomeIcons.cube),
+            label: "Orders",
           ),
         ],
       ),

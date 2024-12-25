@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_routes.dart';
+import '../constants/font_sizes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white,
       body: Center(
         child: Text(
-          "Gadget Store",
+          "SoleMate",
           style: GoogleFonts.aBeeZee(
               fontSize: FontSizes.biggestFont, fontWeight: FontWeight.w700),
         ),
