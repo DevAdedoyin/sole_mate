@@ -42,24 +42,24 @@ class ShoesList {
             "The first sneakers envisioned by Sabato De Sarno for the House, the Re-Web sees Gucci’s heritage stripes as a bold statement detail on a contemporary silhouette. This pair is crafted from white leather. Defined by multiple iconic details, this new sneaker takes center stage with the bold green and red Web tongue. "),
     Shoes(
         image:
-            "https://uk.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-lv-x-timberland-ankle-boots--BRSQ1PNU31_PM2_Front%20view.png?wid=730&hei=730",
+            "https://media.gucci.com/style/DarkGray_Center_0_0_2400x2400/1726642829/812036_FAD21_2543_002_100_0000_Light-Womens-boot-with-crystals.jpg",
         sizeList: ["UK 8", "UK 10", "UK 11"],
-        price: "£1,999.00",
-        itemName: "LV x Timberland Ankle Boots",
-        category: "Men's Shoes",
-        ratings: "4.8",
-        description:
-            "The co-branded LV x Timberland Ankle Boots combine the workwear spirit of Timberland with the luxury savoir-faire of Louis Vuitton. The model, seen at Pharrell Williams' Fall-Winter 2024 Men's Show, is made in Italy from the finest grained nubuck leather and features an insulated lining and a seam-sealed construction for optimum comfort and durability. Key details include a collar in Monogram grained calf leather and a tag bearing the signature of the collaboration."),
-    Shoes(
-        image:
-            "https://uk.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-laureate-platform-desert-boots--AS8Q2BTX41_PM2_Front%20view.png?wid=730&hei=730",
-        sizeList: ["UK 8", "UK 9", "UK10"],
-        price: "£1,110.00",
-        itemName: "Laureate Platform Desert Boots",
+        price: "£1,040.00",
+        itemName: "Women's boot with crystals",
         category: "Women's Shoes",
         ratings: "4.8",
         description:
-            "The iconic Laureate Platform Desert Boots are revisited in canvas with calf leather trims. The colour palette and combination of materials give this style a subtle military vibe, complementing its long leather laces and treaded rubber outsole. An LV Initials signature features on the side, while the outsole is decorated with a row of LV Initials."),
+            "This shoe features multi-dimensional crystals that add a special feature to the classic silhouette. The emblematic monogram canvas adds a touch of timeless elegance, highlighting the brand's heritage. Carefully crafted, this design effortlessly combines luxury and bold style, making it a true statement piece."),
+    Shoes(
+        image:
+            "https://media.gucci.com/style/DarkGray_Center_0_0_2400x2400/1721840409/812631_AADHW_9573_002_100_0000_Light-Mens-Gucci-Re-Web-sneaker.jpg",
+        sizeList: ["UK 8", "UK 9", "UK10"],
+        price: "£1,040.00",
+        itemName: "Men's Gucci Re-Web sneaker",
+        category: "Men's Shoes",
+        ratings: "4.8",
+        description:
+            "The first sneakers envisioned by Sabato De Sarno for the House, the Re-Web sees Gucci’s heritage stripes as a bold statement detail on a contemporary silhouette. This pair is crafted from the Original GG canvas and white leather. Defined by multiple details, this new sneaker takes center stage with the bold green and red Web tongue."),
     Shoes(
         image:
             "https://media.gucci.com/style/DarkGray_Center_0_0_2400x2400/1717173915/793056_FADLD_4046_002_100_0000_Light-Childrens-high-top-canvas-sneaker.jpg",

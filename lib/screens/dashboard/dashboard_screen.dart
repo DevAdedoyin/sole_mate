@@ -36,11 +36,11 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
           ref.read(tabIndex.notifier).state = index;
         },
         currentIndex: bottomNavTab,
-        selectedIconTheme: IconThemeData(color: AppColors.tertiaryColor),
+        selectedIconTheme: IconThemeData(color: Colors.black),
         unselectedIconTheme: IconThemeData(color: AppColors.greyColor),
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        selectedItemColor: AppColors.tertiaryColor,
+        selectedItemColor: Colors.black,
         unselectedItemColor: AppColors.greyColor,
         elevation: 0,
         selectedLabelStyle:

@@ -18,6 +18,7 @@ class _CartTabState extends ConsumerState<HomeTab> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
+    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -125,23 +126,60 @@ class _CartTabState extends ConsumerState<HomeTab> {
                     ),
                     Positioned(
                         child: ListView.builder(
-                            itemCount:  ShoesList.shoesList.length,
+                            itemCount: ShoesList.shoesList.length,
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (_, index) {
                               return Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
                                 elevation: 10,
-                                margin: const EdgeInsets.symmetric(
-                                    horizontal: GapSizes.smallGap),
+                                color: Colors.white,
+                                margin: const EdgeInsets.only(
+                                    left: GapSizes.smallGap,
+                                    right: GapSizes.smallGap,
+                                    bottom: GapSizes.smallGap),
                                 child: Container(
                                   width: size.width * 0.7,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color: Colors.white,
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: GapSizes.smallerGap,
+                                      horizontal: GapSizes.smallerGap),
                                   child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                        width: size.width * 0.45,
-                                        child: Image.network(
-                                            ShoesList.shoesList[index].image),
-                                      )
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(12),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            color: Colors.white,
+                                          ),
+                                          width: double.maxFinite,
+                                          child: Image.network(
+                                              ShoesList.shoesList[index].image),
+                                        ),
+                                      ),
+                                      Text(
+                                        ShoesList.shoesList[index].price,
+                                        style: textTheme.headlineMedium,
+                                      ),
+                                      Text(
+                                        ShoesList.shoesList[index].itemName,
+                                        style: textTheme.headlineSmall,
+                                      ),
+                                      Text(
+                                        ShoesList.shoesList[index].category,
+                                        style: textTheme.labelLarge,
+                                      ),
                                     ],
                                   ),
                                 ),
