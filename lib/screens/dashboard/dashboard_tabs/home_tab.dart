@@ -5,6 +5,8 @@ import 'package:sole_mate/common/gaps.dart';
 import 'package:sole_mate/constants/font_sizes.dart';
 import 'package:sole_mate/constants/gap_sizes.dart';
 
+import '../../../data/shoe_data.dart';
+
 class HomeTab extends ConsumerStatefulWidget {
   const HomeTab({super.key});
 
@@ -123,12 +125,14 @@ class _CartTabState extends ConsumerState<HomeTab> {
                     ),
                     Positioned(
                         child: ListView.builder(
-                            itemCount: 4,
+                            itemCount:  ShoesList.shoesList.length,
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (_, index) {
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: GapSizes.smallGap),
+                                elevation: 10,
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: GapSizes.smallGap),
                                 child: Container(
                                   width: size.width * 0.7,
                                   child: Column(
@@ -136,7 +140,7 @@ class _CartTabState extends ConsumerState<HomeTab> {
                                       Container(
                                         width: size.width * 0.45,
                                         child: Image.network(
-                                            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/69da1e90-63d1-47d2-9372-4f6fb23f9eda/NIKE+AIR+FORCE+1+JEWEL.png"),
+                                            ShoesList.shoesList[index].image),
                                       )
                                     ],
                                   ),
