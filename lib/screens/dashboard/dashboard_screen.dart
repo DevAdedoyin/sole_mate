@@ -36,7 +36,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
           ref.read(tabIndex.notifier).state = index;
         },
         currentIndex: bottomNavTab,
-        selectedIconTheme: IconThemeData(color: Colors.black),
+        selectedIconTheme: const IconThemeData(color: Colors.black),
         unselectedIconTheme: IconThemeData(color: AppColors.greyColor),
         showUnselectedLabels: true,
         showSelectedLabels: true,

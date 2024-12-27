@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sole_mate/common/gaps.dart';
 import 'package:sole_mate/constants/font_sizes.dart';
 import 'package:sole_mate/constants/gap_sizes.dart';
-
+import 'package:badges/badges.dart' as badges;
 import '../../../data/shoe_data.dart';
 
 class HomeTab extends ConsumerStatefulWidget {
@@ -164,8 +164,20 @@ class _CartTabState extends ConsumerState<HomeTab> {
                                             color: Colors.white,
                                           ),
                                           width: double.maxFinite,
-                                          child: Image.network(
-                                              ShoesList.shoesList[index].image),
+                                          child: Stack(
+                                            children: [
+                                              Image.network(ShoesList
+                                                  .shoesList[index].image),
+                                              const Positioned(
+                                                top: GapSizes.smallGap,
+                                                right: GapSizes.smallGap,
+                                                child: Icon(
+                                                  Icons.favorite_border,
+                                                  size: 30,
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                       Text(
