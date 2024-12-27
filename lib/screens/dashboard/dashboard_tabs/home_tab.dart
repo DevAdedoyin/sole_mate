@@ -5,6 +5,7 @@ import 'package:sole_mate/common/gaps.dart';
 import 'package:sole_mate/constants/font_sizes.dart';
 import 'package:sole_mate/constants/gap_sizes.dart';
 import 'package:badges/badges.dart' as badges;
+import '../../../constants/colors.dart';
 import '../../../data/shoe_data.dart';
 
 class HomeTab extends ConsumerStatefulWidget {
@@ -130,69 +131,72 @@ class _CartTabState extends ConsumerState<HomeTab> {
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (_, index) {
-                              return Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                elevation: 10,
-                                color: Colors.white,
-                                margin: const EdgeInsets.only(
-                                    left: GapSizes.smallGap,
-                                    right: GapSizes.smallGap,
-                                    bottom: GapSizes.smallGap),
-                                child: Container(
-                                  width: size.width * 0.7,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    color: Colors.white,
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: GapSizes.smallerGap,
-                                      horizontal: GapSizes.smallerGap),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(12),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            color: Colors.white,
-                                          ),
-                                          width: double.maxFinite,
-                                          child: Stack(
-                                            children: [
-                                              Image.network(ShoesList
-                                                  .shoesList[index].image),
-                                              const Positioned(
-                                                top: GapSizes.smallGap,
-                                                right: GapSizes.smallGap,
-                                                child: Icon(
-                                                  Icons.favorite_border,
-                                                  size: 30,
-                                                ),
-                                              )
-                                            ],
+                                  elevation: 10,
+                                  color: Colors.white,
+                                  margin: const EdgeInsets.only(
+                                      left: GapSizes.smallGap,
+                                      right: GapSizes.smallGap,
+                                      bottom: GapSizes.smallGap),
+                                  child: Container(
+                                    width: size.width * 0.7,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      color: Colors.white,
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: GapSizes.smallerGap,
+                                        horizontal: GapSizes.smallerGap),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(12),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              color: Colors.blueGrey.shade50,
+                                            ),
+                                            width: double.maxFinite,
+                                            child: Stack(
+                                              children: [
+                                                Image.network(ShoesList
+                                                    .shoesList[index].image),
+                                                const Positioned(
+                                                  top: GapSizes.smallGap,
+                                                  right: GapSizes.smallGap,
+                                                  child: Icon(
+                                                    Icons.favorite_border,
+                                                    size: 30,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Text(
-                                        ShoesList.shoesList[index].price,
-                                        style: textTheme.headlineMedium,
-                                      ),
-                                      Text(
-                                        ShoesList.shoesList[index].itemName,
-                                        style: textTheme.headlineSmall,
-                                      ),
-                                      Text(
-                                        ShoesList.shoesList[index].category,
-                                        style: textTheme.labelLarge,
-                                      ),
-                                    ],
+                                        Text(
+                                          ShoesList.shoesList[index].price,
+                                          style: textTheme.headlineLarge,
+                                        ),
+                                        Text(
+                                          ShoesList.shoesList[index].itemName,
+                                          style: textTheme.headlineMedium,
+                                        ),
+                                        Text(
+                                          ShoesList.shoesList[index].category,
+                                          style: textTheme.labelLarge,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );

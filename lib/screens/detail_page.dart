@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DetailScreen extends ConsumerStatefulWidget {
@@ -11,6 +12,6 @@ class DetailScreen extends ConsumerStatefulWidget {
 class _CartTabState extends ConsumerState<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }
