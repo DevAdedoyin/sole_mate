@@ -72,7 +72,7 @@ class ShoesList {
             "The first sneakers envisioned by Sabato De Sarno for the House, the Re-Web sees Gucci’s heritage stripes as a bold statement detail on a contemporary silhouette. This pair is crafted from the Original GG canvas and white leather. Defined by multiple details, this new sneaker takes center stage with the bold green and red Web tongue."),
     Shoes(
         image:
-            "https://res.cloudinary.com/dcgjsxhub/image/upload/v1735339835/removal.ai__7c18422b-539d-4f2c-8201-5b842032902c_812631_AADHW_9573_002_100_0000_Light-Mens-Gucci-Re-Web-sneaker_sdrbxe.png",
+            "https://res.cloudinary.com/dcgjsxhub/image/upload/v1735339835/removal.ai__3464b12d-f3e9-4aa7-8157-b94a859047ea-793056_fadld_4046_002_100_0000_light-childrens-high-top-canvas-sneaker_ltjsfx.png",
         imageSource:
             "https://media.gucci.com/style/DarkGray_Center_0_0_2400x2400/1717173915/793056_FADLD_4046_002_100_0000_Light-Childrens-high-top-canvas-sneaker.jpg",
         sizeList: ["UK 7", "UK 8", "UK 9"],

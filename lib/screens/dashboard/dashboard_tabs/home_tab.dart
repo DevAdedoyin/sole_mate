@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sole_mate/common/gaps.dart';
+import 'package:sole_mate/constants/app_routes.dart';
 import 'package:sole_mate/constants/font_sizes.dart';
 import 'package:sole_mate/constants/gap_sizes.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:sole_mate/repository/selected_index_repo.dart';
+import 'package:sole_mate/routing/go_router_provider.dart';
 import '../../../constants/colors.dart';
 import '../../../data/shoe_data.dart';
 
@@ -20,6 +23,7 @@ class _CartTabState extends ConsumerState<HomeTab> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     TextTheme textTheme = Theme.of(context).textTheme;
+    ref.watch(selectedIndex);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -131,71 +135,84 @@ class _CartTabState extends ConsumerState<HomeTab> {
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemBuilder: (_, index) {
-                              return ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  elevation: 10,
-                                  color: Colors.white,
-                                  margin: const EdgeInsets.only(
-                                      left: GapSizes.smallGap,
-                                      right: GapSizes.smallGap,
-                                      bottom: GapSizes.smallGap),
-                                  child: Container(
-                                    width: size.width * 0.7,
-                                    decoration: BoxDecoration(
+                              return GestureDetector(
+                                onTap: () {
+                                  ref.read(selectedIndex.notifier).state =
+                                      index;
+                                  goRouter.push(AppRoutes.detailPage);
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
-                                      color: Colors.white,
                                     ),
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: GapSizes.smallerGap,
-                                        horizontal: GapSizes.smallerGap),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.circular(12),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              color: Colors.blueGrey.shade50,
-                                            ),
-                                            width: double.maxFinite,
-                                            child: Stack(
-                                              children: [
-                                                Image.network(ShoesList
-                                                    .shoesList[index].image),
-                                                const Positioned(
-                                                  top: GapSizes.smallGap,
-                                                  right: GapSizes.smallGap,
-                                                  child: Icon(
-                                                    Icons.favorite_border,
-                                                    size: 30,
+                                    elevation: 10,
+                                    color: Colors.white,
+                                    margin: const EdgeInsets.only(
+                                        left: GapSizes.smallGap,
+                                        right: GapSizes.smallGap,
+                                        bottom: GapSizes.smallGap),
+                                    child: Container(
+                                      width: size.width * 0.7,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.white,
+                                      ),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: GapSizes.smallerGap,
+                                          horizontal: GapSizes.smallerGap),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(12),
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                                color: Colors.blueGrey.shade50,
+                                              ),
+                                              width: double.maxFinite,
+                                              child: Stack(
+                                                children: [
+                                                  Hero(
+                                                    tag: "tag$index",
+                                                    child: Image.network(
+                                                        ShoesList
+                                                            .shoesList[index]
+                                                            .image),
                                                   ),
-                                                )
-                                              ],
+                                                  const Positioned(
+                                                    top: GapSizes.smallGap,
+                                                    right: GapSizes.smallGap,
+                                                    child: Icon(
+                                                      Icons.favorite_border,
+                                                      size: 30,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Text(
-                                          ShoesList.shoesList[index].price,
-                                          style: textTheme.headlineLarge,
-                                        ),
-                                        Text(
-                                          ShoesList.shoesList[index].itemName,
-                                          style: textTheme.headlineMedium,
-                                        ),
-                                        Text(
-                                          ShoesList.shoesList[index].category,
-                                          style: textTheme.labelLarge,
-                                        ),
-                                      ],
+                                          Text(
+                                            ShoesList.shoesList[index].price,
+                                            style: textTheme.headlineLarge,
+                                          ),
+                                          Text(
+                                            ShoesList.shoesList[index].itemName,
+                                            style: textTheme.headlineMedium,
+                                          ),
+                                          Text(
+                                            ShoesList.shoesList[index].category,
+                                            style: textTheme.labelLarge,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
