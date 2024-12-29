@@ -23,6 +23,8 @@ class _CartTabState extends ConsumerState<HomeTab> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     TextTheme textTheme = Theme.of(context).textTheme;
+    print(size.height);
+    print(size.width);
     ref.watch(selectedIndex);
     return Scaffold(
       body: Container(
@@ -87,7 +89,9 @@ class _CartTabState extends ConsumerState<HomeTab> {
                 )
               ]),
             ),
-            verticalGap(size.height * 0.15),
+            // TODO: CHECK HEIGHT AMD ADJUST IN THE PIXEL 7A
+            verticalGap(
+                size.height <= 800 ? size.height * 0.07 : size.height * 0.15),
             Container(
                 alignment: Alignment.centerLeft,
                 padding:
@@ -124,10 +128,12 @@ class _CartTabState extends ConsumerState<HomeTab> {
                     Container(
                       height: size.height * 0.3,
                       decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              topLeft: Radius.circular(20))),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(20),
+                          topLeft: Radius.circular(20),
+                        ),
+                      ),
                     ),
                     Positioned(
                         child: ListView.builder(
