@@ -49,7 +49,7 @@ This app serves as a demonstration of Flutter's capability to create visually ap
 ### UI Source
 - https://dribbble.com/shots/23846301-E-commerce-Mobile-App
 ### Assets and Image Sources
-- Most images used in this project were sourced from Gucci store website.
+- Most images used in this project were sourced from the Gucci store website and Pixabay.
 
 ## LICENSE
 - See the LICENSE.md file for license rights and limitations (MIT).
