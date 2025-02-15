@@ -29,7 +29,7 @@ This app serves as a demonstration of Flutter's capability to create visually ap
 
 ## DOWNLOAD
 <b color="red">To run the app and use on your android device kindly download via the link below.</b>
-### https://drive.google.com/file/d/1A7C6qsJ9j79TLksyQ1tFbBOdxRjxUTsm/view?usp=sharing
+### https://www.dropbox.com/scl/fi/mhiveiu3epsj0x4uhy1zs/app-debug.apk?rlkey=9iyvbtbcftdih18qa9vsk1qsj&st=ood3iz65&dl=0
 
 ## INSTALLATION GUIDE AND CONFIGURATION
 ### The installation process for this project is very straightforward.
